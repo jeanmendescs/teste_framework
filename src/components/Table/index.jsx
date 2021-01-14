@@ -22,6 +22,10 @@ const Table = ({ data, header, pageTitle }) => {
     ));
   };
 
+  if (!data) {
+    return null;
+  }
+
   return (
     <div>
       <h1>{pageTitle}</h1>

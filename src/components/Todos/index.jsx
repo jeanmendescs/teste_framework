@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Table from "../Table";
+import { useFetch } from "../../useFetch";
 
 const Todos = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const { data } = await axios.get(
-        `https://jsonplaceholder.typicode.com/todos`
-      );
-      setData(data);
-    };
-    getPosts();
-  }, []);
+  const { data } = useFetch({
+    url: "https://jsonplaceholder.typicode.com/todos",
+  });
 
   return (
     <div>

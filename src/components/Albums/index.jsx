@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useFetch } from "../../useFetch";
 import Table from "../Table";
 
 const Albums = () => {
-  const [data, setPosts] = useState([]);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const { data } = await axios.get(
-        `https://jsonplaceholder.typicode.com/albums`
-      );
-      setPosts(data);
-    };
-    getPosts();
-  }, []);
+  const { data } = useFetch({
+    url: "https://jsonplaceholder.typicode.com/albums",
+  });
 
   return (
     <div>
