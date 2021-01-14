@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles.module.scss";
 
 const Table = ({ data, header, pageTitle }) => {
   const renderBody = () => {
@@ -8,8 +9,8 @@ const Table = ({ data, header, pageTitle }) => {
           <td>{userId}</td>
           <td>{id}</td>
           <td>{title}</td>
-          {body && <td>{`${body}`}</td>}
-          {completed && <td>{`${completed}`}</td>}
+          {body && <td>{body}</td>}
+          {completed !== undefined && <td>{`${completed}`}</td>}
         </tr>
       );
     });
@@ -24,7 +25,7 @@ const Table = ({ data, header, pageTitle }) => {
   return (
     <div>
       <h1>{pageTitle}</h1>
-      <table>
+      <table id={styles.students}>
         <thead>
           <tr>{renderHeader()}</tr>
         </thead>
