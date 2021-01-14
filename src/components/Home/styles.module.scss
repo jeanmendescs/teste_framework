@@ -19,19 +19,42 @@ body {
 }
 
 .card {
-  height: 300px;
-  text-align: center;
-
   &:not(:last-child) {
     margin-right: 20px;
   }
 }
 
 .cardImg {
-  height: 100%;
-  text-align-last: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  height: 330px;
+  width: 300px;
+  align-items: flex-end;
+  justify-content: center;
+  text-decoration: none;
+  border: 3px solid #605f5e;
+  position: relative;
 
-  img {
-    height: 100%;
+  &::after {
+    position: absolute;
+    background: #605f5e;
+    content: "";
+    width: 200px;
+    height: 4px;
+    bottom: 20px;
   }
+}
+
+.albumsImg {
+  background-image: url("../../img/Albums.jpg");
+}
+
+.postsImg {
+  background-image: url("../../img/Posts.jpg");
+}
+
+.todosImg {
+  background-image: url("../../img/Todos.jpg");
 }
