@@ -4,7 +4,7 @@ import { useFetch } from "../../useFetch";
 import Table from "../Table";
 
 const Albums = () => {
-  const { data } = useFetch({
+  const { rawData } = useFetch({
     url: "https://jsonplaceholder.typicode.com/albums",
   });
 
@@ -12,7 +12,7 @@ const Albums = () => {
     <div>
       <Link to="/">Home</Link>
       <Table
-        data={data}
+        rawData={rawData}
         header={["User ID", "ID", "Title"]}
         pageTitle="Albums"
       />

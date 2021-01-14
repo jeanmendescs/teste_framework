@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import { useTable } from "./useTable";
 
-const Table = ({ data, header, pageTitle }) => {
+const Table = ({ rawData, header, pageTitle }) => {
+  const { data, sort } = useTable({ rawData });
+
   const renderBody = () => {
     return data.map(({ userId, id, title, body, completed }) => {
       return (
@@ -16,11 +19,12 @@ const Table = ({ data, header, pageTitle }) => {
     });
   };
 
-  const renderHeader = () => {
-    return header.map((columnTitle, index) => (
-      <th key={index}>{columnTitle}</th>
+  const renderHeader = () =>
+    header.map(({ name, key }) => (
+      <th onClick={() => sort(key)} key={key}>
+        {name}
+      </th>
     ));
-  };
 
   if (!data) {
     return null;
