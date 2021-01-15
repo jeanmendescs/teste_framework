@@ -1,26 +1,32 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-body {
-  box-sizing: border-box;
-}
-
 .container {
   display: flex;
   justify-content: center;
-  padding: 20px;
   height: 100vh;
   align-items: center;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .card {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+
   &:not(:last-child) {
     margin-right: 20px;
+
+    @media (max-width: 960px) {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
   }
 }
 

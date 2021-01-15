@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Posts from "./Posts";
-import Albums from "./Albums";
-import Todos from "./Todos";
-import Home from "./Home";
+import { Posts, Albums, Todos, Home } from "./pages";
+import "./reset.scss";
 
 const App = () => {
   return (

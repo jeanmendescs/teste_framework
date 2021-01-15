@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { useTable } from "./useTable";
 
 const Table = ({ rawData, header, pageTitle }) => {
-  const { data, sort } = useTable({ rawData });
+  const { data, handleSort } = useTable({ rawData });
 
   const renderBody = () => {
     return data.map(({ userId, id, title, body, completed }) => {
@@ -21,7 +21,7 @@ const Table = ({ rawData, header, pageTitle }) => {
 
   const renderHeader = () =>
     header.map(({ name, key }) => (
-      <th onClick={() => sort(key)} key={key}>
+      <th onClick={() => handleSort(key)} key={key}>
         {name}
       </th>
     ));
@@ -31,15 +31,17 @@ const Table = ({ rawData, header, pageTitle }) => {
   }
 
   return (
-    <div>
+    <>
       <h1>{pageTitle}</h1>
-      <table id={styles.students}>
-        <thead>
-          <tr>{renderHeader()}</tr>
-        </thead>
-        <tbody>{renderBody()}</tbody>
-      </table>
-    </div>
+      <div className={styles.container}>
+        <table className={styles.table}>
+          <thead>
+            <tr>{renderHeader()}</tr>
+          </thead>
+          <tbody>{renderBody()}</tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

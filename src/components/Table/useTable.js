@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { sortString, sort } from "../../utils";
 
 export const useTable = ({ rawData }) => {
   const [data, setData] = useState();
@@ -8,22 +9,21 @@ export const useTable = ({ rawData }) => {
     setData(rawData);
   }, [rawData]);
 
-  const sort = (key) => {
+  const handleSort = (key) => {
     let sortedData;
 
-    if (direction === "asc") {
-      sortedData = data.sort((a, b) => a[key] - b[key]);
-      setDirection("desc");
+    if (typeof data[0][key] === "string") {
+      sortedData = sortString(key, direction, data);
     } else {
-      sortedData = data.sort((a, b) => b[key] - a[key]);
-      setDirection("asc");
+      sortedData = sort(key, direction, data);
     }
 
+    setDirection(direction === "asc" ? "desc" : "asc");
     setData(sortedData);
   };
 
   return {
     data,
-    sort,
+    handleSort,
   };
 };
