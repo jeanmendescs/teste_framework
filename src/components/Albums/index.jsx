@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../../useFetch";
 import Table from "../Table";
+import Layout from "../Layout";
 
 const Albums = () => {
   const { rawData } = useFetch({
@@ -9,14 +10,14 @@ const Albums = () => {
   });
 
   return (
-    <div>
+    <Layout>
       <Link to="/">Home</Link>
       <Table
         rawData={rawData}
         header={["User ID", "ID", "Title"]}
         pageTitle="Albums"
       />
-    </div>
+    </Layout>
   );
 };
 

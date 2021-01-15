@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Table from "../Table";
+import Layout from "../Layout";
 import { useFetch } from "../../useFetch";
 
 const Todos = () => {
@@ -14,7 +15,7 @@ const Todos = () => {
       name: "User Id",
     },
     {
-      key: "Id",
+      key: "id",
       name: "Id",
     },
     {
@@ -28,10 +29,10 @@ const Todos = () => {
   ];
 
   return (
-    <div>
+    <Layout>
       <Link to="/">Home</Link>
       <Table rawData={rawData} header={header} pageTitle="Todos" />
-    </div>
+    </Layout>
   );
 };
 
