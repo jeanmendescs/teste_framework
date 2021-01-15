@@ -4,6 +4,7 @@ import { sortString, sort } from "../../utils";
 export const useTable = ({ rawData }) => {
   const [data, setData] = useState();
   const [direction, setDirection] = useState("asc");
+  const [columnSelected, setColumnSelected] = useState("");
 
   useEffect(() => {
     setData(rawData);
@@ -20,10 +21,13 @@ export const useTable = ({ rawData }) => {
 
     setDirection(direction === "asc" ? "desc" : "asc");
     setData(sortedData);
+    setColumnSelected(key);
   };
 
   return {
     data,
     handleSort,
+    direction,
+    columnSelected,
   };
 };

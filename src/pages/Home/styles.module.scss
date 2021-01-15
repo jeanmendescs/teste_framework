@@ -40,12 +40,12 @@
   align-items: flex-end;
   justify-content: center;
   text-decoration: none;
-  border: 3px solid #605f5e;
+  border: 3px solid #161c16;
   position: relative;
 
   &::after {
     position: absolute;
-    background: #605f5e;
+    background: #161c16;
     content: "";
     width: 200px;
     height: 4px;

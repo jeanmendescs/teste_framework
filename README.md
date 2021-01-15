@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Teste Framework
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Esta aplicação é composta por uma seção inicial que dá acesso a outras três páginas, sendo que cada das três possui uma tabela em que os dados podem ser ordenados ao clicar no nome da coluna no cabeçalho da tabela. Os dados das tabelas foram extraídos da API do https://jsonplaceholder.typicode.com/
 
-## Available Scripts
+## Tabela de conteúdos
 
-In the project directory, you can run:
+<!--ts-->
 
-### `npm start`
+- [Teste Framework](#teste-framework)
+- [Tabela de conteúdos](#tabela-de-conteúdos)
+- [Projeto Online](#projeto-online)
+- [Descrição](#descrição)
+- [Screenshots](#screenshots)
+- [Tecnologias](#tecnologias)
+- [Instalação](#instalação)
+- [Status](#status)
+- [Contato](#contato)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Descrição
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O objetivo desta aplicação é exibir em tabelas os dados extraídos da API do https://jsonplaceholder.typicode.com/. Para tanto, foram aplicados conhecimentos de React, Consumo de API's, design responsivo, SASS e HTML.
 
-### `npm test`
+## Projeto Online
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://jeanmendescs-teste-framework.netlify.app/
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Example screenshot](https://imgur.com/9oMIbGP.jpg)
+![Example screenshot](https://imgur.com/Bz3ZoTM.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- CSS Modules
+- Sass
 
-### `npm run eject`
+## Instalação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para rodar aplicação faça o seguinte:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone este repositório
+git clone https://github.com/jeanmendescs/teste_framework.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd teste_framework
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Instale as dependências
+$ npm install
 
-## Learn More
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Status
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Finalizado.
 
-### Code Splitting
+## Contato
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<div style="display:flex">
+<a href="https://github.com/jeanmendescs">
+ <img height="auto" src="https://avatars3.githubusercontent.com/u/57002849?s=400&u=fff71a8a729144edec9bfd51b2d6dd89af52e00a&v=4" width="100px;" alt="Jean's Profile Picture"/>
+ <br />
+ <sub style="display:block; text-align:center;"><span >Jean Carlos</span></sub></a> <a href="https://github.com/jeanmendescs" title="Jean's Profile Picture"></a>
+</div>
 
-### Analyzing the Bundle Size
+Sinta-se à vontade para entrar em contato comigo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div style="display: inline-block;">
+<a href="https://www.linkedin.com/in/jean-mendes//"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" ></a>
 
-### Making a Progressive Web App
+<a href="mailto:mendes.jean.cs@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" ></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</div>

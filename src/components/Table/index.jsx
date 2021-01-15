@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { useTable } from "./useTable";
 
 const Table = ({ rawData, header, pageTitle }) => {
-  const { data, handleSort } = useTable({ rawData });
+  const { data, handleSort, direction, columnSelected } = useTable({ rawData });
 
   const renderBody = () => {
     return data.map(({ userId, id, title, body, completed }) => {
@@ -19,10 +19,12 @@ const Table = ({ rawData, header, pageTitle }) => {
     });
   };
 
+  const toggleDirectionIcon = direction === "asc" ? "\u25B2" : "\u25Bc";
+
   const renderHeader = () =>
     header.map(({ name, key }) => (
       <th onClick={() => handleSort(key)} key={key}>
-        {name}
+        {`${name} ${columnSelected === key ? toggleDirectionIcon : ""}`}
       </th>
     ));
 
