@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useFetch } from "./utils";
 import { Posts, Albums, Todos, Home } from "./pages";
 import "./reset.scss";
 
 const App = () => {
+  const [users, setUsers] = useState();
+
+  const { rawData } = useFetch({
+    url: "https://jsonplaceholder.typicode.com/users",
+  });
+
+  useEffect(() => {
+    if (rawData) {
+      setUsers(rawData);
+    } else {
+      return;
+    }
+  }, [rawData]);
+
   return (
     <Router>
       <Switch>
@@ -11,13 +26,13 @@ const App = () => {
           <Home />
         </Route>
         <Route path="/posts" exact>
-          <Posts />
+          <Posts users={users} />
         </Route>
         <Route path="/albums" exact>
-          <Albums />
+          <Albums users={users} />
         </Route>
         <Route path="/todos" exact>
-          <Todos />
+          <Todos users={users} />
         </Route>
       </Switch>
     </Router>

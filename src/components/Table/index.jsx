@@ -2,15 +2,18 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { useTable } from "./useTable";
 
-const Table = ({ rawData, header, pageTitle }) => {
-  const { data, handleSort, direction, columnSelected } = useTable({ rawData });
+const Table = ({ rawData, header, pageTitle, users }) => {
+  const { data, handleSort, direction, columnSelected } = useTable({
+    rawData,
+    users,
+  });
 
   const renderBody = () => {
-    return data.map(({ userId, id, title, body, completed }) => {
+    return data.map(({ userName, id, title, body, completed }) => {
       return (
         <tr key={id}>
-          <td>{userId}</td>
           <td>{id}</td>
+          <td>{userName}</td>
           <td>{title}</td>
           {body && <td>{body}</td>}
           {completed !== undefined && <td>{`${completed}`}</td>}
