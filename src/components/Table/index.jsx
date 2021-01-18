@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.scss";
 import { useTable } from "./useTable";
+import { UsersContext } from "../../utils";
 
-const Table = ({ rawData, header, pageTitle, users }) => {
+const Table = ({ rawData, header, pageTitle }) => {
+  const users = useContext(UsersContext);
   const { data, handleSort, direction, columnSelected } = useTable({
     rawData,
     users,

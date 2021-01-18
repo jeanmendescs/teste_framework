@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Table, Layout } from "../../components";
 import { todosHeader, useFetch } from "../../utils";
 
-const Todos = ({ users }) => {
+const Todos = () => {
   const { rawData } = useFetch({
     url: "https://jsonplaceholder.typicode.com/todos",
   });
@@ -14,12 +14,7 @@ const Todos = ({ users }) => {
       <Link to="/">
         <FaArrowLeft size="25px" />
       </Link>
-      <Table
-        rawData={rawData}
-        header={todosHeader}
-        pageTitle="Todos"
-        users={users}
-      />
+      <Table rawData={rawData} header={todosHeader} pageTitle="Todos" />
     </Layout>
   );
 };

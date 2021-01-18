@@ -7,7 +7,7 @@ export const useTable = ({ rawData, users }) => {
   const [columnSelected, setColumnSelected] = useState("");
 
   useEffect(() => {
-    if (rawData && users) {
+    if (rawData.length > 0 && users.length > 0) {
       const rawDataWithUserName = rawData.map((item) => {
         const user = users.find((user) => user.id === item.userId);
         return { ...item, userName: user.name };
