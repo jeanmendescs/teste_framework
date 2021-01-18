@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { albumsHeader, useFetch } from "../../utils";
 import { Table, Layout } from "../../components";
 
-const Albums = ({ users }) => {
+const Albums = () => {
   const { rawData } = useFetch({
     url: "https://jsonplaceholder.typicode.com/albums",
   });
@@ -14,12 +14,7 @@ const Albums = ({ users }) => {
       <Link to="/">
         <FaArrowLeft size="25px" />
       </Link>
-      <Table
-        rawData={rawData}
-        header={albumsHeader}
-        pageTitle="Albums"
-        users={users}
-      />
+      <Table rawData={rawData} header={albumsHeader} pageTitle="Albums" />
     </Layout>
   );
 };
